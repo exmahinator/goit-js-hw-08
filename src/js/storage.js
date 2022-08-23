@@ -16,7 +16,16 @@ const load = key => {
   }
 };
 
+const clearByKey = key => {
+  try {
+    localStorage.removeItem(key);
+  } catch (error) {
+    console.error('Get state error: ', error.message);
+  }
+};
+
 export default {
   save,
   load,
+  clearByKey,
 };
